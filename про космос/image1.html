@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Космос — мій сайт</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Таємниці Космосу</h1>
+    <nav>
+      <a href="#home">Головна</a>
+      <a href="#planets">Планети</a>
+      <a href="#gallery">Галерея</a>
+    </nav>
+  </header>
+
+  <!-- ГОЛОВНА -->
+  <section id="home" class="active">
+    <h2>Ласкаво просимо у безмежний Всесвіт!</h2>
+    <p>Космос — це нескінченний простір, який приховує безліч загадок. Тут народжуються зірки, обертаються планети й існують галактики неймовірної краси.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/The_Milky_Way_Galaxy.jpg" alt="Галактика" width="400">
+
+    <h3>Що ти знайдеш на сайті:</h3>
+    <ul>
+      <li>Огляд планет Сонячної системи;</li>
+      <li>Цікаві факти про Всесвіт;</li>
+      <li>Фотогалерею космічних об’єктів.</li>
+    </ul>
+  </section>
+
+  <!-- ПЛАНЕТИ -->
+  <section id="planets">
+    <h2>Планети Сонячної системи</h2>
+    <p>Сонячна система складається з 8 основних планет, кожна з яких має свої особливості:</p>
+    <ol>
+      <li><b>Меркурій</b> — найближча до Сонця планета.</li>
+      <li><b>Венера</b> — найгарячіша планета системи.</li>
+      <li><b>Земля</b> — наш дім, єдина планета з життям.</li>
+      <li><b>Марс</b> — червона планета з пиловими бурями.</li>
+      <li><b>Юпітер</b> — найбільший газовий гігант.</li>
+      <li><b>Сатурн</b> — має найвідоміші кільця.</li>
+      <li><b>Уран</b> — обертається «на боці».</li>
+      <li><b>Нептун</b> — найвіддаленіша планета Сонячної системи.</li>
+    </ol>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Solar_sys8.jpg" alt="Планети Сонячної системи" width="450">
+  </section>
+
+  <!-- ГАЛЕРЕЯ -->
+  <section id="gallery">
+    <h2>Галерея космічних знімків</h2>
+    <div class="gallery">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/NGC_4414_%28NASA-med%29.jpg" alt="Галактика NGC 4414">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/M104_ngc4594_sombrero_galaxy_hi-res.jpg" alt="Галактика Сомбреро">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Crab_Nebula.jpg" alt="Туманність Рака">
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Матвій Навчання | 
+      <a href="#home">Головна</a> | 
+      <a href="#planets">Планети</a> | 
+      <a href="#gallery">Галерея</a>
+    </p>
+  </footer>
+
+  <script>
+    // Перемикання "сторінок" без перезавантаження
+    const links = document.querySelectorAll("nav a, footer a");
+    const sections = document.querySelectorAll("section");
+
+    links.forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        const target = link.getAttribute("href").substring(1);
+
+        sections.forEach(sec => sec.classList.remove("active"));
+        document.getElementById(target).classList.add("active");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    });
+  </script>
+</body>
+</html>
